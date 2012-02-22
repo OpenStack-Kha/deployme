@@ -16,7 +16,7 @@ Vagrant::Config.run do |config|
     end
     config.vm.define :rabbit do |rabbit_config|
         rabbit_config.vm.network :hostonly, "10.0.0.102", :netmask => "255.255.255.0"
-        rabbit_config.vm.host_name = "os-main"
+        rabbit_config.vm.host_name = "os-rabbit"
         rabbit_config.vm.box = "os-oneiric"
         rabbit_config.vm.forward_port 22, 2225
         rabbit_config.vm.provision :chef_solo do |chef|
