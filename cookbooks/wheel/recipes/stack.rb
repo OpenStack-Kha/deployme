@@ -65,7 +65,7 @@ end
 
 git "/home/#{node[:wheel][:username]}/devstack" do
     repository node[:stack][:repository_url]
-    reference "master"
+    reference "#{node[:stack][:branch]}"
     action :sync
     user node[:wheel][:username]
 end
@@ -84,7 +84,8 @@ template "/home/#{node[:wheel][:username]}/devstack/localrc" do
         :RABBIT_HOST => node[:stack][:rabbit][:host],
         :RABBIT_PASSWORD => node[:stack][:rabbit][:password],
         :REPOS => node[:stack][:repos],
-        :BRANCH => node[:stack][:branch]
+        :DEVSTACK_BRANCH => node[:stack][:branch],
+        :BRANCHES => node[:stack][:branches]        
     )
 end
 

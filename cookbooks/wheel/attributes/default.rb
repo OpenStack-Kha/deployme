@@ -1,5 +1,6 @@
 default[:wheel][:username] = "wheeel"
 default[:stack][:repository_url] = "https://github.com/OpenStack-Kha/devstack.git"
+default[:stack][:branch] = "rabbitmq_ha"
 default[:stack][:mysql][:host] = "127.0.0.1"
 default[:stack][:mysql][:user] = "root"
 default[:stack][:mysql][:password] = "nova"
@@ -23,5 +24,21 @@ default[:stack][:repos] = {
                             "MELANGE" => "https://github.com/OpenStack-Kha/melange.git",
                             "MELANGECLIENT" => "https://github.com/OpenStack-Kha/python-melangeclient.git"
                             }
-default[:stack][:branch] = "stable-essex3"
+default[:stack][:branches] = {
+                            "KEYSTONE" => "rabbitmq_ha",
+                            "NOVA" => "rabbitmq_ha",
+                            "SWIFT" => "stable-essex3",
+                            "SWIFT_KEYSTONE" => "stable-essex3",
+                            "GLANCE" => "rabbitmq_ha",
+                            "NOVNC" => "stable-essex3",
+                            "HORIZON" => "stable-essex3",
+                            "NOVACLIENT" => "stable-essex3",
+                            "KEYSTONECLIENT" => "stable-essex3",
+                            "QUANTUM" => "stable-essex3",
+                            "QUANTUM_CLIENT" => "stable-essex3",
+                            "TEMPEST" => "stable-essex3",
+                            "MELANGE" => "stable-essex3",
+                            "MELANGECLIENT" => "stable-essex3"
+                            }
+
 
