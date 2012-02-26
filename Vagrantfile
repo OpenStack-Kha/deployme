@@ -3,7 +3,7 @@
 
 Vagrant::Config.run do |config|
     config.vm.define :openstack do |os_config|
-        os_config.vm.network :bridged
+        os_config.vm.network :hostonly, "10.100.0.101", :netmask => "255.255.0.0"
         os_config.vm.host_name = "os-main"
         os_config.vm.box = "os-oneiric"
         os_config.vm.forward_port 22, 2224
@@ -15,7 +15,7 @@ Vagrant::Config.run do |config|
         end 
     end
     config.vm.define :rabbit do |rabbit_config|
-        rabbit_config.vm.network :bridged
+        rabbit_config.vm.network :hostonly, "10.100.0.102", :netmask => "255.255.0.0"
         rabbit_config.vm.host_name = "os-rabbit"
         rabbit_config.vm.box = "os-oneiric"
         rabbit_config.vm.forward_port 22, 2225
@@ -26,7 +26,7 @@ Vagrant::Config.run do |config|
         end 
     end
     config.vm.define :rabbit2 do |rabbit_config2|
-        rabbit_config2.vm.network :bridged
+        rabbit_config2.vm.network :hostonly, "10.100.0.103", :netmask => "255.255.0.0"
         rabbit_config2.vm.host_name = "os-rabbit2"
         rabbit_config2.vm.box = "os-oneiric"
         rabbit_config2.vm.forward_port 22, 2226
