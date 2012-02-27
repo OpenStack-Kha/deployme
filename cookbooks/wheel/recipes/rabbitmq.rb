@@ -45,6 +45,13 @@ execute "rabbitmq stop_app && reset" do
     command "rabbitmqctl stop_app && rabbitmqctl reset"
 end
 
+execute "rabbitmq start_app" do
+    command "rabbitmqctl start_app"
+end
+
+execute "rabbitmq change_password" do
+    command "rabbitmqctl change_password guest #{node[:stack][:rabbit][:password]}"
+end
 #todo: use search
 #execute "add os-main to hosts" do
 #    command "echo \"\r\n10.0.0.101     os-main\n\r10.0.0.102    os-rabbit\" >> /etc/hosts"
