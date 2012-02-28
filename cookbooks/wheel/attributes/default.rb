@@ -1,10 +1,10 @@
 default[:wheel][:username] = "wheeel"
 default[:stack][:repository_url] = "https://github.com/OpenStack-Kha/devstack.git"
-default[:stack][:branch] = "rabbitmq_ha"
+default[:stack][:branch] = "stable-essex3"
 default[:stack][:mysql][:host] = "127.0.0.1"
 default[:stack][:mysql][:user] = "root"
 default[:stack][:mysql][:password] = "nova"
-default[:stack][:rabbit][:addresses] = "10.100.0.101:5672,10.100.0.102:5672,10.100.0.103:5672"
+default[:stack][:rabbit][:host] = "127.0.0.1"
 default[:stack][:rabbit][:password] = "nova"
 default[:stack][:libvirt_type] = "qemu"
 default[:stack][:enabled_services] = "g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-sch,n-novnc,n-xvnc,n-cauth,horizon,mysql,rabbit,n-vol"
@@ -25,11 +25,11 @@ default[:stack][:repos] = {
                             "MELANGECLIENT" => "https://github.com/OpenStack-Kha/python-melangeclient.git"
                             }
 default[:stack][:branches] = {
-                            "KEYSTONE" => "rabbitmq_ha",
-                            "NOVA" => "rabbitmq_ha",
+                            "KEYSTONE" => "stable-essex3",
+                            "NOVA" => "stable-essex3",
                             "SWIFT" => "stable-essex3",
                             "SWIFT_KEYSTONE" => "stable-essex3",
-                            "GLANCE" => "rabbitmq_ha",
+                            "GLANCE" => "stable-essex3",
                             "NOVNC" => "stable-essex3",
                             "HORIZON" => "stable-essex3",
                             "NOVACLIENT" => "stable-essex3",
