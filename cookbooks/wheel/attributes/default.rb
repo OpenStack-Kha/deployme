@@ -20,7 +20,7 @@ default[:stack][:repos] = {
                             "KEYSTONECLIENT" => "https://github.com/OpenStack-Kha/python-keystoneclient.git",
                             "QUANTUM" => "https://github.com/OpenStack-Kha/quantum.git",
                             "QUANTUM_CLIENT" => "https://github.com/OpenStack-Kha/python-quantumclient.git",
-                            "TEMPEST" => "https://github.com/OpenStack-Kha/tempest.git",
+                            "TEMPEST" => "https://github.com/openstack/tempest.git",
                             "MELANGE" => "https://github.com/OpenStack-Kha/melange.git",
                             "MELANGECLIENT" => "https://github.com/OpenStack-Kha/python-melangeclient.git"
                             }
@@ -36,7 +36,7 @@ default[:stack][:branches] = {
                             "KEYSTONECLIENT" => "stable-essex3",
                             "QUANTUM" => "stable-essex3",
                             "QUANTUM_CLIENT" => "stable-essex3",
-                            "TEMPEST" => "stable-essex3",
+                            "TEMPEST" => "master",
                             "MELANGE" => "stable-essex3",
                             "MELANGECLIENT" => "stable-essex3"
                             }
