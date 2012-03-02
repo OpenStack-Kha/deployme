@@ -9,7 +9,7 @@ include_recipe "wheel::stack"
 
 git "/home/#{node[:wheel][:username]}/tempest" do
     repository node[:stack][:repos]["TEMPEST"]
-    reference "#{node[:stack][:branch]}"
+    reference "#{node[:stack][:branches]["TEMPEST"]}"
     action :sync
     user node[:wheel][:username]
 end
