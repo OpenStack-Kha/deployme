@@ -14,7 +14,8 @@ git "/home/#{node[:wheel][:username]}/tempest" do
     user node[:wheel][:username]
 end
 
-execute "./conf_from_devstack --devstack-dir=/home/#{node[:wheel][:username]}/devstack" do
+execute "conf_from_devstack" do
+    command "./conf_from_devstack --devstack-dir=\"/home/#{node[:wheel][:username]}/devstack\" > /home/#{node[:wheel][:username]}/tempest/etc/tempest.conf"
     user node[:wheel][:username]
     environment ({"HOME" => "/home/#{node[:wheel][:username]}"})
     cwd "/home/#{node[:wheel][:username]}/tempest/tempest/tools"
