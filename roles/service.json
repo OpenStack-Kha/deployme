@@ -1,0 +1,14 @@
+{
+  "name": "service",
+  "default_attributes": {},
+  "override_attributes": {"stack":  { "enabled_services": "rabbit,mysql" }},
+  "json_class": "Chef::Role",
+  "description": "Service Node with mysql and rabbitmq on board",
+  "chef_type": "role",
+  "run_list" : [ "recipe[deployment]",
+                 "recipe[essentials]",
+                 "recipe[ruby]",
+                 "recipe[ruby::ruby18]",
+                 "recipe[ccdb]",
+                 "recipe[cloud_controller]"]
+}

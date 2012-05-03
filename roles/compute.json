@@ -1,0 +1,10 @@
+{
+  "name": "compute",
+  "default_attributes": {},
+  "override_attributes": {"stack":  { "enabled_services": "n-cpu,n-net" }},
+  "json_class": "Chef::Role",
+  "description": "Ningbo Deployment Compute Node",
+  "chef_type": "role",
+  "run_list" : [ "recipe[wheel:stack]"
+               ]
+}
