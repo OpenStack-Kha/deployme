@@ -74,7 +74,21 @@ template "/home/#{node[:wheel][:username]}/devstack/localrc" do
     group node[:wheel][:username]
     action :create_if_missing
     variables(
+        :SERVICE_TOKEN => node[:stack][:service_token],
+        :ADMIN_PASSWORD => node[:stack][:admin_password],
+        :GUEST_PASSWORD => node[:stack][:guest_password],
         :ENABLED_SERVICES => node[:stack][:enabled_services],
+        :PUBLIC_INTERFACE => node[:stack][:public_interface],
+        :VLAN_INTERFACE => node[:stack][:vlan_interface],
+        :MULTI_HOST => node[:stack][:multi_host],
+        :GLANCE_HOSTPORT => node[:stack][:glance_hostport],
+        :KEYSTONE_API_PORT => node[:stack][:keystone][:api_port],
+        :KEYSTONE_AUTH_HOST => node[:stack][:keystone][:auth_host],
+        :KEYSTONE_AUTH_PORT => node[:stack][:keystone][:auth_port],
+        :KEYSTONE_AUTH_PROTOCOL => node[:stack][:keystone][:auth_protocol],
+        :KEYSTONE_SERVICE_HOST => node[:stack][:keystone][:service_host],
+        :KEYSTONE_SERVICE_PORT => node[:stack][:keystone][:service_port],
+        :KEYSTONE_SERVICE_PROTOCOL => node[:stack][:keystone][:service_protocol],
         :LIBVIRT_TYPE => node[:stack][:libvirt_type],
         :MYSQL_HOST => node[:stack][:mysql][:host],
         :MYSQL_USER => node[:stack][:mysql][:user],
