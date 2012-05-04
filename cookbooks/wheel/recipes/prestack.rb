@@ -72,7 +72,7 @@ execute "git clone #{node[:stack][:repository_url]} -b #{node[:stack][:branch]} 
     user node[:wheel][:username]
 end
 
-template "/home/#{node[:wheel][:username]}/devstack/localrc" do
+template "/tmp/#{node[:wheel][:username]}/devstack/localrc" do
     source "localrc.erb"
     owner node[:wheel][:username]
     group node[:wheel][:username]
