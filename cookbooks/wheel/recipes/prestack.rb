@@ -68,7 +68,7 @@ directory "/tmp/#{node[:wheel][:username]}/" do
     action :create
 end
 
-execute "git clone #{node[:stack][:repository_url]} -b #{node[:stack][:branch]} /tmp/#{node[:wheel][:username]}" do
+execute "git clone #{node[:stack][:repository_url]} -b #{node[:stack][:branch]} /tmp/#{node[:wheel][:username]}/devstack" do
     user node[:wheel][:username]
 end
 
