@@ -14,9 +14,7 @@
                                                }
                                     }
                          },
-  "json_class": "Chef::Role",
   "description": "Ningbo Deployment Head Node",
-  "chef_type": "role",
   "run_list" : [ 
                  "recipe[wheel::stack]"
                ]
