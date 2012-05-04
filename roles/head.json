@@ -1,14 +1,23 @@
 {
-  "name": "cloud_controller",
+  "name": "head_node",
   "default_attributes": {},
-  "override_attributes": {"stack":  { "enabled_services": "key,n-crt,n-obj,n-novnc,n-xvnc,n-cauth,horizon" }},
+  "override_attributes": {"stack":  { 
+                                      "enabled_services": "key,n-crt,n-obj,n-novnc,n-xvnc,n-cauth,horizon",
+                                      "rabbit": { 
+                                                 "host": "10.9.13.40", 
+                                                 "password": "guest"
+                                                },
+                                      "mysql": {
+                                                 "host": "10.9.13.40",
+                                                 "user": "root",
+                                                 "password": "nova"
+                                               }
+                                    }
+                         },
   "json_class": "Chef::Role",
   "description": "Ningbo Deployment Head Node",
   "chef_type": "role",
-  "run_list" : [ "recipe[deployment]",
-                 "recipe[essentials]",
-                 "recipe[ruby]",
-                 "recipe[ruby::ruby18]",
-                 "recipe[ccdb]",
-                 "recipe[cloud_controller]"]
+  "run_list" : [ 
+                 "recipe[wheel::stack]"
+               ]
 }
