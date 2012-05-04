@@ -106,3 +106,6 @@ template "/tmp/#{node[:wheel][:username]}/devstack/localrc" do
     )
 end
 
+execute "pip install sqlalchemy-migrate" do
+    user node[:wheel][:username]
+end
