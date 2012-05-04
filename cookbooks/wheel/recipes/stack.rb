@@ -8,6 +8,7 @@
 include_recipe "wheel::prestack"
 
 Chef::Log.info("started recipe stack")
+Chef::Log.debug("enabled services: #{node[:stack][:enabled_services]}")
 
 execute "sudo ./stack_centos.sh" do
     environment ({"HOME" => "/home/#{node[:wheel][:username]}"})
