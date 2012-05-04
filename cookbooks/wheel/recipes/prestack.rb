@@ -61,10 +61,14 @@ cookbook_file "/home/#{node[:wheel][:username]}/.ssh/id_rsa.pub" do
     action :create_if_missing
 end
 
-git "/home/#{node[:wheel][:username]}/devstack" do
-    repository node[:stack][:repository_url]
-    reference "#{node[:stack][:branch]}"
-    action :sync
+directory "/tmp/#{node[:wheel][:username]}/" do
+    owner node[:wheel][:username]
+    group node[:wheel][:username]
+    mode "0755"
+    action :create
+end
+
+execute "git clone #{node[:stack][:repository_url]} -b #{node[:stack][:branch]} /tmp/#{node[:wheel][:username]}" do
     user node[:wheel][:username]
 end
 

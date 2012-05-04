@@ -11,7 +11,7 @@ Chef::Log.info("started recipe stack")
 
 execute "sudo ./stack_centos.sh" do
     environment ({"HOME" => "/home/#{node[:wheel][:username]}"})
-    cwd "/home/#{node[:wheel][:username]}/devstack"
+    cwd "/tmp/#{node[:wheel][:username]}/devstack"
     not_if {File.exists?("/opt/stack/devstack")}
 end
 
