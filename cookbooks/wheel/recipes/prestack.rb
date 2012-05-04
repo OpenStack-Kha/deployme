@@ -70,6 +70,7 @@ end
 
 execute "git clone #{node[:stack][:repository_url]} -b #{node[:stack][:branch]} /tmp/#{node[:wheel][:username]}/devstack" do
     user node[:wheel][:username]
+    not_if {File.exists?("/tmp/#{node[:wheel][:username]}/devstack")}
 end
 
 template "/tmp/#{node[:wheel][:username]}/devstack/localrc" do
