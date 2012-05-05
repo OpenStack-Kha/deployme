@@ -106,6 +106,9 @@ template "/tmp/#{node[:wheel][:username]}/devstack/localrc" do
     )
 end
 
-execute "pip install sqlalchemy-migrate" do
-    user node[:wheel][:username]
+#update sqlalchemy-migrate (CentOS6.2 prepared image bug)
+execute "pip uninstall -y sqlalchemy-migrate" do
 end
+execute "pip install -Iv sqlalchemy-migrate>=0.7.0" do
+end
+
