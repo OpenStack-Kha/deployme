@@ -1,10 +1,29 @@
 {
   "name": "compute",
   "default_attributes": {},
-  "override_attributes": {"stack":  { "enabled_services": "n-cpu,n-net" }},
+  "override_attributes": {"stack":  { 
+                                      "enabled_services": "n-cpu,n-net",
+                                      "libvirt_type": "qemu",
+                                      "glance_hostport": "10.9.13.31:9292",
+                                      "keystone": {
+                                                    "auth_host": "10.9.13.21",
+                                                    "service_host": "10.9.13.21"
+                                                  },
+                                      "rabbit": { 
+                                                 "host": "10.9.13.40", 
+                                                 "password": "guest"
+                                                },
+                                      "mysql": {
+                                                 "host": "10.9.13.40",
+                                                 "user": "root",
+                                                 "password": "nova"
+                                               }
+                                    }
+                         },
+  "chef_type": "role",
   "json_class": "Chef::Role",
   "description": "Ningbo Deployment Compute Node",
-  "chef_type": "role",
-  "run_list" : [ "recipe[wheel:stack]"
+  "run_list" : [ 
+                 "recipe[wheel::stack]"
                ]
 }
