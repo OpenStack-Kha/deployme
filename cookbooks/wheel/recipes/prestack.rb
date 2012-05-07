@@ -106,9 +106,13 @@ template "/tmp/#{node[:wheel][:username]}/devstack/localrc" do
     )
 end
 
-#update sqlalchemy-migrate (CentOS6.2 prepared image bug)
+#update sqlalchemy-migrate (horizon dependency)
 execute "pip uninstall -y sqlalchemy-migrate" do
 end
 execute "pip install -Iv sqlalchemy-migrate>=0.7.0" do
+end
+
+#install iso8601 (glance dependency)
+execute "pip install -Iv iso8601" do
 end
 
