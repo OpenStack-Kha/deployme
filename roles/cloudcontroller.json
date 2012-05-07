@@ -4,8 +4,8 @@
   "override_attributes": {"stack":  { 
                                       "enabled_services": "n-api,n-sch,n-vol,g-api,g-reg", 
                                       "keystone": {
-                                                    "auth_host": "10.9.13.46",
-                                                    "service_host": "10.9.13.46"
+                                                    "auth_host": "10.9.13.21",
+                                                    "service_host": "10.9.13.21"
                                                   },
                                       "rabbit": { 
                                                  "host": "10.9.13.40", 
