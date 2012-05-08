@@ -2,7 +2,7 @@
   "name": "cloud_controller",
   "default_attributes": {},
   "override_attributes": {"stack":  { 
-                                      "enabled_services": "mysql,rabbit,n-api,n-sch,g-api,g-reg", 
+                                      "enabled_services": "n-api,n-sch,g-api,g-reg", 
                                       "keystone": {
                                                     "auth_host": "10.9.13.101",
                                                     "service_host": "10.9.13.101"

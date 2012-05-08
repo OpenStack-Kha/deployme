@@ -2,7 +2,7 @@
   "name": "head_node",
   "default_attributes": {},
   "override_attributes": {"stack":  { 
-                                      "enabled_services": "key,n-crt,n-obj,n-vol,n-novnc,n-xvnc,n-cauth,horizon",
+                                      "enabled_services": "rabbit,mysql,key,n-crt,n-obj,n-vol,n-novnc,n-xvnc,n-cauth,horizon",
                                       "glance": {
                                                   "host": "10.9.13.102"
                                                 },
@@ -12,11 +12,11 @@
                                                 "vol_host": "10.9.13.101"
                                               },
                                       "rabbit": { 
-                                                 "host": "127.0.0.1", 
+                                                 "host": "10.9.13.101", 
                                                  "password": "guest"
                                                 },
                                       "mysql": {
-                                                 "host": "127.0.0.1",
+                                                 "host": "10.9.13.101",
                                                  "user": "root",
                                                  "password": "nova"
                                                }
