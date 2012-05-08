@@ -35,12 +35,12 @@ gem install chef --no-ri --no-rdoc
 git clone $DEPLOYME /tmp/deployme && cd /tmp/deployme
 
 # run list
-touch config/run.json
-echo "{ \"run_list\": \"role[$ROLE]\" }" > config/run.json
+touch run.json
+echo "{ \"run_list\": \"role[$ROLE]\" }" > run.json
 
 #clone roles
-git clone $DEPLOYME_CONFIG -b $BRANCH roles
+git clone $DEPLOYME_CONFIG -b $BRANCH config
 
 # run, Forest, run!
-chef-solo -c config/solo.rb -j config/run.json
+chef-solo -c solo.cfg.rb -j run.json
 
