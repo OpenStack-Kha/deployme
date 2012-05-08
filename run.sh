@@ -12,9 +12,9 @@ fi
 
 ROLE=$2
 BRANCH=$5
-RUBYGEMS={$RUBYGEMS:-rubygems-1.8.10}
-DEPLOYME={$DEPLOYME:-https://github.com/OpenStack-Kha/deployme.git}
-DEPLOYME_CONFIG={$DEPLOYME_CONFIG:-https://github.com/OpenStack-Kha/deployme.config.git}
+RUBYGEMS=${RUBYGEMS:-"rubygems-1.8.10"}
+DEPLOYME=${DEPLOYME:-"https://github.com/OpenStack-Kha/deployme.git"}
+DEPLOYME_CONFIG=${DEPLOYME_CONFIG:-"https://github.com/OpenStack-Kha/deployme.config.git"}
 
 rm -rf /tmp/deployme
 
