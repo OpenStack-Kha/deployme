@@ -2,17 +2,25 @@
   "name": "cloud_controller",
   "default_attributes": {},
   "override_attributes": {"stack":  { 
-                                      "enabled_services": "n-api,n-sch,n-vol,g-api,g-reg", 
+                                      "enabled_services": "mysql,rabbit,n-api,n-sch,g-api,g-reg", 
                                       "keystone": {
-                                                    "auth_host": "10.9.13.21",
-                                                    "service_host": "10.9.13.21"
+                                                    "auth_host": "10.9.13.101",
+                                                    "service_host": "10.9.13.101"
                                                   },
+                                      "glance": {
+                                                  "host": "127.0.0.1"
+                                                },
+                                      "nova": {
+                                                "api_host": "127.0.0.1",
+                                                "obj_host": "10.9.13.101",
+                                                "vol_host": "10.9.13.101"
+                                              },
                                       "rabbit": { 
-                                                 "host": "10.9.13.40", 
+                                                 "host": "10.9.13.101", 
                                                  "password": "guest"
                                                 },
                                       "mysql": {
-                                                 "host": "10.9.13.40",
+                                                 "host": "10.9.13.101",
                                                  "user": "root",
                                                  "password": "nova"
                                                }
