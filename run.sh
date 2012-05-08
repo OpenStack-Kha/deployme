@@ -23,7 +23,7 @@ echo "FYI: installing the RBEL repo"
 rpm -Uvh http://rbel.frameos.org/rbel6
 echo "FYI: installing ruby and other development tools"
 yum -y install ruby ruby-devel ruby-ri ruby-rdoc ruby-shadow gcc gcc-c++ automake autoconf make curl dmidecode
-echo "FYI: installing rubyrems from rource"
+echo "FYI: installing rubygems from source"
 cd /tmp
 curl -O http://production.cf.rubygems.org/rubygems/$RUBYGEMS.tgz
 tar zxf $RUBYGEMS.tgz
