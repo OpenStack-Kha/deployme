@@ -15,32 +15,38 @@ BRANCH=$5
 RUBYGEMS=${RUBYGEMS:-"rubygems-1.8.10"}
 DEPLOYME=${DEPLOYME:-"https://github.com/OpenStack-Kha/deployme.git"}
 DEPLOYME_CONFIG=${DEPLOYME_CONFIG:-"https://github.com/OpenStack-Kha/deployme.config.git"}
+TARGET_DIR=${TARGET_DIR:-"/tmp/deployme"}
 
 rm -rf /tmp/deployme
 
-#install the RBEL repo
+echo "FYI: installing the RBEL repo"
 rpm -Uvh http://rbel.frameos.org/rbel6
-#install Ruby and other development tools:
+echo "FYI: installing ruby and other development tools"
 yum -y install ruby ruby-devel ruby-ri ruby-rdoc ruby-shadow gcc gcc-c++ automake autoconf make curl dmidecode
-#install RubyGems from Source
+echo "FYI: installing rubyrems from rource"
 cd /tmp
 curl -O http://production.cf.rubygems.org/rubygems/$RUBYGEMS.tgz
 tar zxf $RUBYGEMS.tgz
 ruby $RUBYGEMS/setup.rb --no-format-executable
 cd -
+
+echo "FYI: installing chef"
 #install Chef Gem
 gem install chef --no-ri --no-rdoc
 
 # clone deployme repo
-git clone $DEPLOYME /tmp/deployme && cd /tmp/deployme
+echo "FYI: git clone $DEPLOYME $TARGET_DIR"
+git clone $DEPLOYME $TARGET_DIR 
 
 # run list
-touch run.json
-echo "{ \"run_list\": \"role[$ROLE]\" }" > run.json
+touch $TARGET_DIR/run.json
+echo "{ \"run_list\": \"role[$ROLE]\" }" > $TARGET_DIR/run.json
 
 #clone roles
-git clone $DEPLOYME_CONFIG -b $BRANCH config
+echo "FYI: git clone $DEPLOYME_CONFIG -b $BRANCH $TARGET_DIR/config"
+git clone $DEPLOYME_CONFIG -b $BRANCH $TARGET_DIR/config
 
 # run, Forest, run!
-chef-solo -c solo.cfg.rb -j run.json
+echo "FYI: chef-solo -c $TARGET_DIR/solo.cfg.rb -j $TARGET_DIR/run.json"
+cd $TARGET_DIR && chef-solo -c $TARGET_DIR/solo.cfg.rb -j $TARGET_DIR/run.json && cd -
 
