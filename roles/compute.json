@@ -4,7 +4,10 @@
   "override_attributes": {"stack":  { 
                                       "enabled_services": "n-cpu,n-net",
                                       "libvirt_type": "qemu",
-                                      "glance_hostport": "10.9.13.31:9292",
+                                      "glance": {
+                                                  "host": "10.9.13.31",
+                                                  "port": "9292"
+                                                },
                                       "keystone": {
                                                     "auth_host": "10.9.13.21",
                                                     "service_host": "10.9.13.21"
