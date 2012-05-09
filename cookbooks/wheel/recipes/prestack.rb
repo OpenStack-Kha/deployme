@@ -102,8 +102,10 @@ template "/tmp/#{node[:wheel][:username]}/devstack/localrc" do
         :MYSQL_HOST => node[:stack][:mysql][:host],
         :MYSQL_USER => node[:stack][:mysql][:user],
         :MYSQL_PASSWORD => node[:stack][:mysql][:password],
+        :RABBIT_ADDRESSES => node[:stack][:rabbit][:addresses],
         :RABBIT_HOST => node[:stack][:rabbit][:host],
         :RABBIT_PASSWORD => node[:stack][:rabbit][:password],
+        :RABBIT_MAX_RETRIES => node[:stack][:rabbit][:max_retries],
         :REPOS => node[:stack][:repos],
         :DEVSTACK_BRANCH => node[:stack][:branch],
         :BRANCHES => node[:stack][:branches]        
