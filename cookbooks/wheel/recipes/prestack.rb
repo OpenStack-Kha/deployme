@@ -86,6 +86,7 @@ template "/tmp/#{node[:wheel][:username]}/devstack/localrc" do
         :PUBLIC_INTERFACE => node[:stack][:public_interface],
         :VLAN_INTERFACE => node[:stack][:vlan_interface],
         :MULTI_HOST => node[:stack][:multi_host],
+        :SERVICE_HOST => node[:stack][:service_host],
         :NAPI_HOST => node[:stack][:nova][:api_host],
         :NOBJ_HOST => node[:stack][:nova][:obj_host],
         :NVOL_HOST => node[:stack][:nova][:vol_host],

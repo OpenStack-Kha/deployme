@@ -28,6 +28,7 @@ default[:stack][:keystone][:auth_protocol] = "http"
 default[:stack][:keystone][:service_host] = "127.0.0.1"
 default[:stack][:keystone][:service_port] = "5000"
 default[:stack][:keystone][:service_protocol] = "http"
+default[:stack][:service_host] = ""
 default[:stack][:enabled_services] = "g-api,g-reg,key,n-api,n-crt,n-obj,n-cpu,n-net,n-vol,n-sch,n-novnc,n-xvnc,n-cauth,horizon,mysql,rabbit"
 default[:stack][:repos] = {
                             "NOVA" => "https://github.com/OpenStack-Kha/nova.git",
