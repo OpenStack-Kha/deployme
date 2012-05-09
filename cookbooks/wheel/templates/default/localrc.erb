@@ -30,9 +30,9 @@ RABBIT_PASSWORD=<%= @RABBIT_PASSWORD %>
 RABBIT_MAX_RETRIES=<%= @RABBIT_MAX_RETRIES %>
 LIBVIRT_TYPE=<%= @LIBVIRT_TYPE %>
 <% @REPOS.each do |key, value| -%>
-<%= key %>_REPO="<%= value %>"
+<%= key.upcase %>_REPO="<%= value %>"
 <% end -%>
 <% @BRANCHES.each do |key, value| -%>
-<%= key %>_BRANCH="<%= value %>"
+<%= key.upcase %>_BRANCH="<%= value %>"
 <% end -%>
 LOGFILE='/opt/stack/devstack.log'
