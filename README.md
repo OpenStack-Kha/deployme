@@ -12,3 +12,7 @@ Installation instructions
 
 where `head` is a json config file with roles run list.
 
+Change config files on different hosts
+--------------------------------------
+
+    curl https://raw.github.com/OpenStack-Kha/deployme/master/change_ini.sh | bash -s localhost /etc/nova/nova.conf default vlan_interface eth1
