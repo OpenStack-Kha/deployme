@@ -33,6 +33,8 @@ echo "FYI: installing fabric"
 pip install fabric
 
 echo "FYI: executing fabric"
+pwd
+echo "FYI: fab -H $HOSTS change_ini_value:$INI_FILE,$SECTION,$OPTION,$VALUE"
 fab -H $HOSTS change_ini_value:$INI_FILE,$SECTION,$OPTION,$VALUE
 
 echo "FYI: deactivating venv"
