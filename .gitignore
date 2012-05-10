@@ -1,5 +1,1 @@
-.rake_test_cache
-.vagrant
-config/*
-run.json
-
+fabfile.pyc
