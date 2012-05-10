@@ -13,7 +13,7 @@ def change_ini_value(filePath, section, option, value):
         utils.puts("editing %s" % localFilePath)
         try:
             config = p.read(localFilePath)
-            if not p.has_section(section):
+            if section != "DEFAULT" and not p.has_section(section):
                 utils.puts("adding section %s" % section)
                 p.add_section(section)
             p.set(section, option, value)
