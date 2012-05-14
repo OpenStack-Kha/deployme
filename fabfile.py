@@ -25,3 +25,5 @@ def change_ini_value(filePath, section, option, value):
             return 1
         operations.put(localFilePath, filePath, use_sudo=True)
 
+def install_libguestfs():
+    run("yum install -y fuse libguestfs libguestfs-mount")
